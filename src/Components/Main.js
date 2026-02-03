@@ -21,7 +21,7 @@ class Main extends React.Component {
       <div className="App">
         <header className="App-header">
         
-        {this.state.mode == null?
+        {this.state.mode === null?
         <div>
               <img src={logo} className="App-logo" alt="logo" />
               <p>
@@ -42,23 +42,23 @@ class Main extends React.Component {
               <span className="visually-hidden">Toggle Dropdown</span>
             </button>
             <div className="dropdown-menu">
-              <a
+              <button
                 className="dropdown-item" onClick={()=>this.setMode("fizzbuzz")}>
                 FizzBuzz 
-              </a>
+              </button>
               <div className="dropdown-divider"></div>
             </div>
           </div>          
         </div>
       :<></>}
 
-      {this.state.mode == "fizzbuzz"?
+      {this.state.mode === "fizzbuzz"?
       <div>
           <Fizzbuzz />
       </div>
       :<></>}
 
-      {this.state.mode != null?
+      {this.state.mode !== null?
       <div>
         <br></br><br></br>
           <p>------------</p>

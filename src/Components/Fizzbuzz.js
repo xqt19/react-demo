@@ -34,11 +34,11 @@ class Fizzbuzz extends React.Component{
                 At multiples of both 5 and 7 it should display FIZZBUZZ.<br></br></h4>
                 <p>------------</p>
 
-                {(this.state.num == 0 ? <h1>0</h1> : <></>)}
-                {(this.state.num >0 && this.state.num%5 == 0 && this.state.num%7 != 0? <h1>FIZZ</h1> : <></>)}
-                {(this.state.num >0 && this.state.num%7 == 0 && this.state.num%5 != 0? <h1>BUZZ</h1> : <></>)}
-                {(this.state.num >0 && this.state.num%5 == 0 && this.state.num%7 == 0 ? <h1>FIZZBUZZ</h1> : <></>)}
-                {(this.state.num >0 && this.state.num%5 != 0 && this.state.num%7 != 0 ? <h1>{this.state.num}</h1> : <></>)}
+                {(this.state.num === 0 ? <h1>0</h1> : <></>)}
+                {(this.state.num >0 && this.state.num%5 === 0 && this.state.num%7 !== 0? <h1>FIZZ</h1> : <></>)}
+                {(this.state.num >0 && this.state.num%7 === 0 && this.state.num%5 !== 0? <h1>BUZZ</h1> : <></>)}
+                {(this.state.num >0 && this.state.num%5 === 0 && this.state.num%7 === 0 ? <h1>FIZZBUZZ</h1> : <></>)}
+                {(this.state.num >0 && this.state.num%5 !== 0 && this.state.num%7 !== 0 ? <h1>{this.state.num}</h1> : <></>)}
                 
                 <br></br>
                 <button className="btn btn-primary" onClick={()=>{this.clicked()}}>Click!</button><br />
