@@ -4,16 +4,13 @@ class Fizzbuzz extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            num: 0,
-
-
+            num: 0
         }
     }
 
     clicked =()=>{
-        let newnum = this.state.num +1
         this.setState({
-            num:newnum
+            num: this.state.num +1
         })
     }
     reset =()=>{

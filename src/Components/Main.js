@@ -4,6 +4,7 @@ import React from 'react';
 import Fizzbuzz from './Fizzbuzz';
 import Roman from './Roman';
 import Prime from './Prime';
+import List from './List';
 
 class Main extends React.Component {
   constructor(props){
@@ -56,6 +57,10 @@ class Main extends React.Component {
                 className="dropdown-item" onClick={()=>this.setMode("prime")}>
                 Prime Numbers 
               </button>
+              <button
+                className="dropdown-item" onClick={()=>this.setMode("list")}>
+                To-Do List 
+              </button>
               <div className="dropdown-divider"></div>
             </div>
           </div>          
@@ -77,6 +82,12 @@ class Main extends React.Component {
       {this.state.mode === "prime"?
       <div>
           <Prime />
+      </div>
+      :<></>}
+
+      {this.state.mode === "list"?
+      <div>
+          <List />
       </div>
       :<></>}
 

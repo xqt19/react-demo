@@ -61,8 +61,6 @@ class Prime extends React.Component{
                 <button className="btn btn-primary m-2" onClick={()=>{this.clicked(+1)}}>Increase</button>
                 {(this.state.num >1 ? <button className="btn btn-danger m-2" onClick={()=>{this.clicked(-1)}}>Decrease</button> : <></>)}
                 <h4>The first {this.state.num >1 ? this.state.num : ""} prime number{this.state.num >1 ? "s are" : " is"}: {this.state.prime_numbers.join(",")}</h4>
-
-
             </div>
         )
     }
