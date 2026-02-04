@@ -3,6 +3,7 @@ import './Main.css';
 import React from 'react';
 import Fizzbuzz from './Fizzbuzz';
 import Roman from './Roman';
+import Prime from './Prime';
 
 class Main extends React.Component {
   constructor(props){
@@ -51,6 +52,10 @@ class Main extends React.Component {
                 className="dropdown-item" onClick={()=>this.setMode("roman")}>
                 Roman Numerals 
               </button>
+              <button
+                className="dropdown-item" onClick={()=>this.setMode("prime")}>
+                Prime Numbers 
+              </button>
               <div className="dropdown-divider"></div>
             </div>
           </div>          
@@ -66,6 +71,12 @@ class Main extends React.Component {
       {this.state.mode === "roman"?
       <div>
           <Roman />
+      </div>
+      :<></>}
+
+      {this.state.mode === "prime"?
+      <div>
+          <Prime />
       </div>
       :<></>}
 
