@@ -2,6 +2,7 @@ import logo from '../logo.svg';
 import './Main.css';
 import React from 'react';
 import Fizzbuzz from './Fizzbuzz';
+import Roman from './Roman';
 
 class Main extends React.Component {
   constructor(props){
@@ -46,6 +47,10 @@ class Main extends React.Component {
                 className="dropdown-item" onClick={()=>this.setMode("fizzbuzz")}>
                 FizzBuzz 
               </button>
+              <button
+                className="dropdown-item" onClick={()=>this.setMode("roman")}>
+                Roman Numerals 
+              </button>
               <div className="dropdown-divider"></div>
             </div>
           </div>          
@@ -55,6 +60,12 @@ class Main extends React.Component {
       {this.state.mode === "fizzbuzz"?
       <div>
           <Fizzbuzz />
+      </div>
+      :<></>}
+
+      {this.state.mode === "roman"?
+      <div>
+          <Roman />
       </div>
       :<></>}
 
