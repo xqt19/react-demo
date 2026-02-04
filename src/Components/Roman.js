@@ -4,18 +4,22 @@ class Roman extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            num: 0,
             rom_num: 0,
-            rom_num_translated: "X"
+            rom_num_translated: "X",
+            rom_string: "",
+            rom_string_translated: 0
         }
     }
 
-    clicked =()=>{
-        let newnum = this.state.num +1
-        this.setState({
-            num:newnum
-        })
-    }
+    // changeString =(e)=>{
+    //     let rom_string = e.target.value
+    //     let rom_string_translated = 0
+    //     this.setState({
+    //         rom_string: rom_string,
+    //         rom_string_translated: rom_string_translated
+            
+    //     })
+    // }
     changeNum =(e)=>{
         let rom_num = e.target.value
         let rom_array = []
@@ -92,11 +96,6 @@ class Roman extends React.Component{
             rom_num_translated: rom_array.join("")
         })
     }
-    reset =()=>{
-        this.setState({
-            num: 0
-        })
-    }
 
     render(){
         return(
@@ -104,22 +103,33 @@ class Roman extends React.Component{
                 <h1>Roman Numerals Converter</h1>
                 <p>------------</p>
 
-                <h4>In this exercise, create a code that takes a positive integer and converts it to Roman numerals.<br />
-                I = 1<br></br>
-                V = 5<br></br>
-                X = 10<br></br>
-                L = 50<br></br>
-                C = 100<br></br>
-                D = 500<br></br>
-                M = 1000<br></br></h4>
+                <h4>In this exercise, create a code that takes a positive integer and converts it to Roman numerals.<br /></h4>
+                <h6>
+                I = 1<br />
+                V = 5<br />
+                X = 10<br />
+                L = 50<br />
+                C = 100<br />
+                D = 500<br />
+                M = 1000<br /></h6>
+
+                <input type="number" className="form-control form-control-lg" id="field1" onChange={(e)=>{this.changeNum(e)}}></input>
+                <br/>
+
+                {(this.state.rom_num <= 0 ? <h5>Please input a positive numeral</h5> : <></>)}
+                {(this.state.rom_num > 0 ? <h5>{this.state.rom_num}</h5> : <></>)}
+                {(this.state.rom_num > 0 ? <h5>{this.state.rom_num_translated}</h5> : <></>)}
+
+                {/* <br /><br />
                 <p>------------</p>
+                <h4>Now convert roman numerals to integers</h4>
+                <br />
+                <input type="text" className="form-control form-control-lg" id="field2" onChange={(e)=>{this.changeString(e)}}></input>
+                <br/>
+                {(this.state.rom_string_translated <= 0 ? <h5>Please input a valid string</h5> : <></>)}
+                {(this.state.rom_string_translated > 0 ? <h5>{this.state.rom_string}</h5> : <></>)}
+                {(this.state.rom_string_translated > 0 ? <h5>{this.state.rom_string_translated}</h5> : <></>)} */}
 
-                <input type="number" className="form-control form-control-lg" id="numfield" onChange={(e)=>{this.changeNum(e)}}></input>
-                <br/><br />
-
-                {(this.state.rom_num <= 0 ? <h1>Please input a positive numeral</h1> : <></>)}
-                {(this.state.rom_num > 0 ? <h1>{this.state.rom_num}</h1> : <></>)}
-                {(this.state.rom_num > 0 ? <h1>{this.state.rom_num_translated}</h1> : <></>)}
             </div>
         )
     }
